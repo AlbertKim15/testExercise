@@ -54,12 +54,17 @@
 ## Настройка .env файла на хостинге 
 
 `APP_ENV=production`
+
 `APP_DEBUG=false`
+
 `APP_URL=http://f1268349.xsph.ru`
 
 `DB_HOST=localhost`
+
 `DB_DATABASE=f1268349_laravel`
+
 `DB_USERNAME=f1268349_laravel`
+
 `DB_PASSWORD=MET2BsMY3heh@aD`
 
 ## Принцип работы 
