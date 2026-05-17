@@ -53,23 +53,23 @@
 
 ## Настройка .env файла на хостинге 
 
-APP_ENV=production
-APP_DEBUG=false
-APP_URL=http://f1268349.xsph.ru
+`APP_ENV=production`
+`APP_DEBUG=false`
+`APP_URL=http://f1268349.xsph.ru`
 
-DB_HOST=localhost
-DB_DATABASE=f1268349_laravel
-DB_USERNAME=f1268349_laravel
-DB_PASSWORD=MET2BsMY3heh@aD
+`DB_HOST=localhost`
+`DB_DATABASE=f1268349_laravel`
+`DB_USERNAME=f1268349_laravel`
+`DB_PASSWORD=MET2BsMY3heh@aD`
 
 ## Принцип работы 
 
 Сайт стоит на бесплатном хостинге sprinthost
 У него есть графический интерфейс но при этом все команды связные с пользование работают 
 Команда: 
-php artisan wb:fetch --dateFrom=датаОт(YYYY-MM-DD) --dateTo=датаДо(YYYY-MM-DD)
+`php artisan wb:fetch --dateFrom=датаОт(YYYY-MM-DD) --dateTo=датаДо(YYYY-MM-DD)`
 
 Так же у сайта есть графический интерфейс для самого хостинга т.к. на этом хостинге нет доступа по SSH ключу
 Ссылка: 
-http://f1268349.xsph.ru/
+`http://f1268349.xsph.ru/`
 
