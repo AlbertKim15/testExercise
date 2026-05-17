@@ -55,12 +55,12 @@
 
 APP_ENV=production
 APP_DEBUG=false
-APP_URL=http://ваш-сайт.ru
+APP_URL=http://f1268349.xsph.ru
 
 DB_HOST=localhost
-DB_DATABASE=ваш_логин_имя_базы
-DB_USERNAME=ваш_логин_пользователь
-DB_PASSWORD=ваш_пароль
+DB_DATABASE=f1268349_laravel
+DB_USERNAME=f1268349_laravel
+DB_PASSWORD=MET2BsMY3heh@aD
 
 ## Принцип работы 
 
