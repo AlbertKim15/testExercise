@@ -1,7 +1,7 @@
 <?php
 
+use App\Http\Controllers\FetchDataController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [FetchDataController::class, 'index']);
+Route::post('/fetch', [FetchDataController::class, 'run'])->name('fetch.run');

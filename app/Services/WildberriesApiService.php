@@ -2,7 +2,6 @@
 namespace App\Services;
 
 use Illuminate\Support\Facades\Http;
-use Illuminate\Support\Facades\Log;
 
 class WildberriesApiService
 {
@@ -19,7 +18,7 @@ class WildberriesApiService
     {
         $page     = 1;
         $allItems = [];
-        $limit    = 100; // уменьшил до 100
+        $limit    = 100;
 
         while (true) {
             $params = array_merge($params, [
@@ -28,12 +27,16 @@ class WildberriesApiService
                 'limit' => $limit,
             ]);
 
-            Log::info("Запрос к API: {$endpoint}, страница {$page}");
-
             $response = Http::timeout(30)->get("{$this->baseUrl}/api/{$endpoint}", $params);
 
+            // Только при ошибке 429 делаем задержку
+            if ($response->status() == 429) {
+                sleep(5); // Ждем 5 секунд и повторяем ТОТ ЖЕ запрос
+                continue;
+            }
+
             if (! $response->successful()) {
-                throw new \Exception("API error: {$response->status()} - {$response->body()}");
+                throw new \Exception("API error: {$response->status()}");
             }
 
             $data  = $response->json();
@@ -53,9 +56,7 @@ class WildberriesApiService
             }
 
             $page++;
-
-            // ЗАДЕРЖКА 1 СЕКУНДА МЕЖДУ ЗАПРОСАМИ
-            sleep(1);
+            // НЕТ ЗАДЕРЖКИ МЕЖДУ СТРАНИЦАМИ
         }
 
         return $allItems;

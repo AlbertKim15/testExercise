@@ -9,6 +9,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('sales', function (Blueprint $table) {
+            $table->id();
             $table->string('g_number');
             $table->date('date');
             $table->dateTime('last_change_date');

@@ -102,6 +102,11 @@ class FetchWbData extends Command
     protected function saveSales(array $sales): void
     {
         foreach ($sales as $item) {
+            // Проверяем, что sale_id существует
+            if (! isset($item['sale_id']) || empty($item['sale_id'])) {
+                continue; // пропускаем запись без идентификатора
+            }
+
             Sale::updateOrCreate(
                 ['sale_id' => $item['sale_id']],
                 [
